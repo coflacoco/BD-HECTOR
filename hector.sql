@@ -11,8 +11,46 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- La exportación de datos fue deseleccionada.
--- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura de base de datos para hector
+DROP DATABASE IF EXISTS `hector`;
+CREATE DATABASE IF NOT EXISTS `hector` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `hector`;
+
+-- Volcando estructura para tabla hector.mascota
+DROP TABLE IF EXISTS `mascota`;
+CREATE TABLE IF NOT EXISTS `mascota` (
+  `idemascota` int(11) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `color` varchar(30) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `Raza` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla hector.mascota: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `mascota` DISABLE KEYS */;
+REPLACE INTO `mascota` (`idemascota`, `nombre`, `color`, `edad`, `Raza`) VALUES
+	(1, 'neron', 'negro', 2, 'chandover'),
+	(12, 'NERON', 'NEGRO', 3, 'CHANDOBER');
+/*!40000 ALTER TABLE `mascota` ENABLE KEYS */;
+
+-- Volcando estructura para tabla hector.persona
+DROP TABLE IF EXISTS `persona`;
+CREATE TABLE IF NOT EXISTS `persona` (
+  `idpesona` int(30) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apallido` varchar(50) NOT NULL,
+  `fecha_de_nacimiento` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla hector.persona: ~3 rows (aproximadamente)
+/*!40000 ALTER TABLE `persona` DISABLE KEYS */;
+REPLACE INTO `persona` (`idpesona`, `nombre`, `apallido`, `fecha_de_nacimiento`) VALUES
+	(117489, 'pedro', 'tovar', 27),
+	(123, 'hector', 'hernandez', 27),
+	(123, 'hector', 'hernandez', 27);
+/*!40000 ALTER TABLE `persona` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
